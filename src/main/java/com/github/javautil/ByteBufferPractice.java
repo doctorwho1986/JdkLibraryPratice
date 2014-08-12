@@ -2,6 +2,7 @@ package com.github.javautil;
 
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
 import java.nio.DoubleBuffer;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
@@ -76,6 +77,13 @@ public class ByteBufferPractice {
 		Assert.assertEquals(capacity >> 3, doubleBuffer.capacity());
 		Assert.assertEquals(capacity >> 3, doubleBuffer.limit());
 		Assert.assertEquals(0, doubleBuffer.position());
+		
+		charBuffer();
+	}
+	
+	public static void charBuffer() {
+		int capacity = 512;
+		CharBuffer charBuffer = ByteBuffer.allocateDirect(capacity).asCharBuffer();
 	}
 
 }
